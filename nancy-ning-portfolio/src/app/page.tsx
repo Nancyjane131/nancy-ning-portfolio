@@ -82,13 +82,9 @@ export default function AboutPage() {
           Building this portfolio as a way to think in public and make my work
           visible.
         </p>
-        <p className="text-sm font-sans text-text-secondary leading-relaxed mb-2">
-          Reading <em>The Almanack of Naval Ravikant</em> and thinking about
-          leverage and specific knowledge.
-        </p>
         <p className="text-sm font-sans text-text-secondary leading-relaxed mb-6">
-          Exploring how AI tools can be genuinely useful for non-technical teams
-          without collapsing into demos that never ship.
+          Reading <em>The Psychology of Money</em> by Morgan Housel — on how
+          behaviour and emotions shape financial decisions more than technical skill.
         </p>
         <Link
           href="/now"

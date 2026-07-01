@@ -1,38 +1,40 @@
 interface TimelineItem {
   year: string;
   title: string;
+  subtitle?: string;
   organisation: string;
   description: string;
 }
 
 const timelineItems: TimelineItem[] = [
   {
-    year: "2020",
-    title: "BSc Mathematics & Statistics",
-    organisation: "University of Edinburgh",
+    year: "2016–2020",
+    title: "BSc in Computer Science",
+    subtitle: "Double degree in English",
+    organisation: "Beijing Normal University · Beijing",
     description:
-      "Studied probability, statistical inference, and mathematical modelling. First exposure to data science and machine learning.",
+      "Graduated with an 88/100 GPA, building a strong foundation in mathematics, programming, algorithms, and data structures—while standing at the intersection of science and art through a double degree in English.",
   },
   {
-    year: "2021",
-    title: "Data Analyst",
-    organisation: "Insurance Industry",
+    year: "2020–2023",
+    title: "Master in Business Analytics",
+    organisation: "HKU · Hong Kong",
     description:
-      "Started working with structured insurance data — pricing models, claims analytics, and actuarial reporting.",
+      "Graduated with a GPA of 3.7/4.3, awarded the HKU Merit Scholarship. Bridged quantitative methods with real-world business problems — data, decisions, and everything in between.",
   },
   {
-    year: "2023",
-    title: "AI & Data Specialist",
-    organisation: "Insurance Industry",
+    year: "2023–2024",
+    title: "Junior Data Scientist",
+    organisation: "Zurich Insurance · Hong Kong",
     description:
-      "Moved into applying AI and large language models to business problems. Bridging the gap between technical capability and organisational need.",
+      "Applied data analysis, BI, machine learning, and AI automation to solve business problems from a data-driven perspective, bridging the gap between complex models and practical insurance challenges.",
   },
   {
-    year: "2025",
-    title: "Building in public",
-    organisation: "This portfolio",
+    year: "2024–Now",
+    title: "Senior Officer, Actuarial GenAI",
+    organisation: "FWD Insurance · Hong Kong",
     description:
-      "Thinking through ideas on AI, data, and how organisations change. Writing to make thinking visible.",
+      "Provide end-to-end AI solutions across actuarial, product, and finance teams to enable enterprise AI transformation, bridging insurance business, data, and AI.",
   },
 ];
 
@@ -44,16 +46,23 @@ export function Timeline() {
         {timelineItems.map((item, index) => (
           <li key={index} className="relative pl-8">
             <div className="absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full border-2 border-accent bg-background" />
-            <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-1">
-              <span className="text-sm font-sans font-medium text-accent">
-                {item.year}
-              </span>
-              <h3 className="text-base font-sans font-semibold text-text-primary">
-                {item.title}
-              </h3>
-              <span className="text-sm font-sans text-text-secondary">
-                · {item.organisation}
-              </span>
+            <div className="flex flex-col gap-0.5 mb-1">
+              <div className="flex flex-row items-baseline gap-3">
+                <span className="text-sm font-sans font-medium text-accent">
+                  {item.year}
+                </span>
+                <h3 className="text-base font-sans font-semibold text-text-primary">
+                  {item.title}
+                </h3>
+                <span className="text-sm font-sans text-text-secondary">
+                  · {item.organisation}
+                </span>
+              </div>
+              {item.subtitle && (
+                <p className="text-xs font-sans text-text-tertiary pl-0 ml-0">
+                  {item.subtitle}
+                </p>
+              )}
             </div>
             <p className="text-sm font-sans text-text-secondary leading-relaxed">
               {item.description}
